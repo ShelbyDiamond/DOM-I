@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br>Is<br>Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -40,3 +40,75 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//Header - Nav bar
+const anchorTag = document.querySelectorAll("header nav a")
+anchorTag.forEach ((element, text)=> {
+  element.textContent=siteContent.nav[`nav-item-${text + 1}`]
+})
+
+//Dom is Awesome, button, and circle image 
+
+document.querySelector(".cta h1").innerHTML = siteContent.cta.h1
+
+document.querySelector(".cta button").textContent = siteContent.cta.button
+
+document.querySelector(`.cta img`).src=siteContent.cta["img-src"];
+
+//-------- main content -------
+
+const all4Headings = document.querySelectorAll(".main-content h4");
+
+const {"main-content": {
+  "address": featuresH4,
+  "phone": aboutH4,
+  "email": servicesH4,
+  "product-h4": productH4,
+  "vision-h4": visionH4
+}} = siteContent;
+
+all4Headings[0].textContent = featuresH4,
+all4Headings[1].textContent = aboutH4,
+all4Headings[2].textContent = servicesH4,
+all4Headings[3].textContent = productH4,
+all4Headings[4].textContent = visionH4
+
+// ---------Middle Image ---------
+document.querySelector(`.middle-img`).src = siteContent["main-content"]["middle-img-src"]
+
+//----------- Main Content Paragraphs
+const all4Paragraphs = document.querySelectorAll(".main-content p");
+
+const {"main-content": {
+  "features-content": featuresP,
+  "about-content": aboutP,
+  "services-content": servicesP,
+  "product-content": productP,
+  "vision-content": visionP
+}} = siteContent;
+
+
+all4Paragraphs[0].textContent = featuresP,
+all4Paragraphs[1].textContent = aboutP,
+all4Paragraphs[2].textContent = servicesP,
+all4Paragraphs[3].textContent = productP,
+all4Paragraphs[4].textContent = visionP
+
+// ----- contact -----
+
+document.querySelector(".contact h4").textContent = siteContent.contact["contact-h4"]
+
+const contactInfo = document.querySelectorAll(".contact p");
+
+const {"contact": {
+  "address": address,
+  "phone": phone,
+  "email": email,
+}} = siteContent;
+
+contactInfo[0].textContent = address,
+contactInfo[1].textContent = phone,
+contactInfo[2].textContent = email,
+
+//------ footer -------
+document.querySelector("footer p").textContent = siteContent.footer.copyright
