@@ -17,6 +17,5 @@ function callback() {
 function callbacks() {
   counters++;
   document.getElementById("msHundreds").innerHTML = counters;
-  document.getElementById("msTens").innerHTML = counters;
   console.log(counters);
 }
