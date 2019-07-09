@@ -15,7 +15,12 @@ function callback() {
 }
 
 function callbacks() {
-  counters++;
+  if (counters < 60) counters++;
+  document.getElementById("msHundreds").innerHTML = counters;
+  console.log(counters);
+}
+function callbacks2() {
+  if (counters > 60);
   document.getElementById("msHundreds").innerHTML = counters;
   console.log(counters);
 }
